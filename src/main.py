@@ -5,6 +5,7 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 from dotenv import load_dotenv
+from keep_alive import keep_alive
 
 load_dotenv()
 
@@ -31,4 +32,5 @@ async def hello(interaction: discord.Interaction):
 async def chat(interaction: discord.Interaction, chat_message: str):
     await interaction.response.send_message(chat_bot(chat_message))
 
+keep_alive()
 client.run(DISC_TOKEN)
